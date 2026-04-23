@@ -7,7 +7,21 @@ import { FormService } from './form.service';
 export class FormController {
   constructor(private readonly formService: FormService) {}
 
+@Get('edit/person/:id')
+@Render('edit-person')
+async editPerson(@Param('id') id: number) {
+  const person = await this.formService.readPersonRecord(id);
+  return { person };
+}
 
+@Post('edit/person/:id')
+async updatePerson(
+  @Param('id') id: number,
+  @Body() body: any,
+) {
+  await this.formService.updatePerson(id, body);
+  return { mensagem: 'Atualizado com sucesso' };
+}
 
   @Get()
   @Render('home')

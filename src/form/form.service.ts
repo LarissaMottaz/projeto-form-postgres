@@ -15,6 +15,10 @@ export class FormService {
     private requestRepository: Repository<RequestRecord>,
   ) {}
 
+  async updatePerson(id: number, data: any) {
+  return await this.personRepository.update(id, data);
+}
+
   // ✅ salvar pessoa
   async savePersonForm(data: { nome: string; email: string; telefone: string; cidade: string; pais: string; tataravo: string }) {
     const person = this.personRepository.create(data);
