@@ -13,3 +13,7 @@
 {{/if}}
 
 <p><a href="/records/person">Voltar</a></p>
+<p><a href="/edit/person/{{record.id}}">Editar Pessoa</a></p>
+<form action="/delete/person/{{record.id}}" method="post" style="margin-top:10px;">
+  <button type="submit" class="btn-danger">Excluir</button>
+</form>

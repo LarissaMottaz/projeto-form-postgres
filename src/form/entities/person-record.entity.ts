@@ -18,4 +18,10 @@ export class PersonRecord {
   @Column({ nullable: true })
   cidade: string;
 
+  @Column({ nullable: true })
+  pais: string;
+
+  @Column({ nullable: true })
+  tataravo: string;
+
 }
